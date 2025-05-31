@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nura Dahiru Musa | Software Engineer & Researcher</title>
+    <meta name="description" content="Portfolio website of Nura Dahiru Musa, Software Engineer and Researcher specializing in software development, AI/ML, and blockchain technologies.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                            950: '#1e1b4b',
+                        },
+                        secondary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Base styles */
+        .btn {
+            @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+        }
+        
+        .btn-primary {
+            @apply bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500;
+        }
+        
+        .btn-secondary {
+            @apply bg-white dark:bg-gray-800 border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700 focus:ring-primary-500;
+        }
+        
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white relative inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            @apply absolute -bottom-2 left-0 w-16 h-1 bg-primary-600 rounded;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .animate-fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    <!-- Header/Navbar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#home" class="text-2xl font-bold text-primary-600 dark:text-primary-400 font-heading">
+                    NDM
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Experience</a>
+                    <a href="#education" class="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Education</a>
+                    <a href="#research" class="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Research</a>
+                    <a href="#contact" class="text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Contact</a>
+                </nav>
+                
+                <!-- Theme Toggle & Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300" aria-label="Open mobile menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 z-50 bg-white dark:bg-gray-900 hidden pt-24 pb-6 px-6 overflow-y-auto">
+            <nav class="flex flex-col space-y-6">
+                <a href="#home" class="text-xl text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Home</a>
+                <a href="#about" class="text-xl text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">About</a>
+                <a href="#skills" class="text-xl text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Skills</a>
+                <a href="#experience" class="text-xl text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Experience</a>
+                <a href="#education" class="text-xl text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Education</a>
+                <a href="#research" class="text-xl text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Research</a>
+                <a href="#contact" class="text-xl text-gray-800 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="lg:w-1/2">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+                        Nura Dahiru Musa
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl text-primary-600 dark:text-primary-400 font-semibold mb-6 hero-text" data-text="Software Engineer & Researcher">
+                        Software Engineer & Researcher
+                    </h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl">
+                        Dedicated and enthusiastic professional with strong academic achievements and expertise in software engineering, AI/ML, and blockchain technologies.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500">
+                            <i class="fas fa-envelope mr-2"></i> Contact Me
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white dark:bg-gray-800 border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700 focus:ring-primary-500">
+                            <i class="fas fa-download mr-2"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 p-1">
+                        <div class="absolute inset-1 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center">
+                            <div class="text-8xl text-gray-300 dark:text-gray-600">
+                                    <img src="unnamed.png" alt="Profile Picture" class="rounded-full w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden lg:block">
+                <a href="#about" class="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white relative inline-block text-center mx-auto mb-16">About Me
+                <span class="absolute -bottom-2 left-0 w-16 h-1 bg-primary-600 rounded"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Career Objective & Professional Summary</h3>
+                    
+                    <div class="space-y-6 text-gray-700 dark:text-gray-300">
+                        <p class="text-lg">
+                            To pursue a proficient, challenging and vibrant career in an organization that upholds integrity, talent and hard work.
+                        </p>
+                        
+                        <p>
+                            Dedicated and enthusiastic student with strong academic achievements, eager to learn new skills and information from the software engineering team. Applies education and focused approach to take on new challenges. Learns quickly and brings advanced Software abilities.
+                        </p>
+                        
+                        <p>
+                            Adaptable and resourceful individual committed to overseeing and supporting software solutions. Experienced in coordinating existing software system feature updates to improve performance and add functionality. Offers proactive and critical thinking approaches to issue resolution.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Personal Information</h3>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-sm text-gray-500 dark:text-gray-400">Location</span>
+                                    <span class="font-medium">Wuhan, Hubei, China</span>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-sm text-gray-500 dark:text-gray-400">Email</span>
+                                    <span class="font-medium">nouramousser@gmail.com</span>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-3">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-sm text-gray-500 dark:text-gray-400">Phone</span>
+                                    <span class="font-medium">15623963019</span>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-3">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-sm text-gray-500 dark:text-gray-400">Nationality</span>
+                                    <span class="font-medium">Nigerian</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white relative inline-block text-center mx-auto mb-16">Skills & Expertise
+                <span class="absolute -bottom-2 left-0 w-16 h-1 bg-primary-600 rounded"></span>
+            </h2>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-10">Technical Skills</h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- System Administration -->
+                    <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-800 group">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mb-4 group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
+                            <i class="fas fa-server text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">System Administration</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">Windows, GNU/LINUX, Unix</p>
+                    </div>
+                    
+                    <!-- AI/ML -->
+                    <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-800 group">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mb-4 group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
+                            <i class="fas fa-brain text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AI/ML</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">TensorFlow, PyTorch, Scikit-learn, OpenCV</p>
+                    </div>
+                    
+                    <!-- Application Development -->
+                    <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-800 group">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mb-4 group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Application Development</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">PHP, Python, ElectronJS, Java</p>
+                    </div>
+                    
+                    <!-- Backend Development -->
+                    <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-800 group">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mb-4 group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
+                            <i class="fas fa-database text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Backend Development</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">CodeIgniter, ExpressJS, NodeJS, CakePHP, Spring Boot</p>
+                    </div>
+                    
+                    <!-- Frontend Development -->
+                    <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-800 group">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mb-4 group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
+                            <i class="fas fa-laptop-code text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Frontend Development</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">HTML5, CSS3, jQuery, Bootstrap, ReactJS, AngularJS</p>
+                    </div>
+                    
+                    <!-- Database -->
+                    <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-800 group">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mb-4 group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
+                            <i class="fas fa-table text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Database</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">MySQL, PostgreSQL, MongoDB</p>
+                    </div>
+                    
+                    <!-- Blockchain -->
+                    <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-800 group">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mb-4 group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
+                            <i class="fas fa-link text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Blockchain</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">Truffle, Embark, Solidity, Web3.js</p>
+                    </div>
+                    
+                    <!-- Version Control -->
+                    <div class="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-800 group">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mb-4 group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
+                            <i class="fas fa-code-branch text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Version Control</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">Git, BitBucket</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-10">Soft Skills</h3>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-6 py-3 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300">Creative</span>
+                    <span class="px-6 py-3 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300">Self-motivated</span>
+                    <span class="px-6 py-3 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300">Passionate</span>
+                    <span class="px-6 py-3 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300">Responsible</span>
+                    <span class="px-6 py-3 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300">Honest</span>
+                    <span class="px-6 py-3 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300">Dedicated</span>
+                    <span class="px-6 py-3 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full font-medium hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300">Team Player</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white relative inline-block text-center mx-auto mb-16">Work Experience
+                <span class="absolute -bottom-2 left-0 w-16 h-1 bg-primary-600 rounded"></span>
+            </h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 pb-12 border-l-2 border-gray-200 dark:border-gray-700 last:border-0 last:pb-0">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-600"></div>
+                    <div class="mb-2">
+                        <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full text-sm font-medium">
+                            12/2019 - 2024
+                        </span>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Software Engineer</h3>
+                        <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-4">Kano Electricity Distribution Co. - Kano, KN, Nigeria</h4>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Developed and maintained software applications to improve operational efficiency.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Collaborated with cross-functional teams to design, develop, and implement new features.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Ensured software solutions met the company's security and performance standards.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Worked as a software engineer in Meter Installation Project, NMMP Scheme, and Metering Projects, ensuring seamless integration of software systems with metering infrastructure.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 pb-12 border-l-2 border-gray-200 dark:border-gray-700 last:border-0 last:pb-0">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-600"></div>
+                    <div class="mb-2">
+                        <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full text-sm font-medium">
+                            01/2018 - 01/2019
+                        </span>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">NYSC Primary Assignment</h3>
+                        <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-4">GDSS Gwadabawa - Sokoto, Nigeria</h4>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Taught computer science and information technology to secondary school students.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Developed and implemented a curriculum that aligned with national educational standards.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Provided technical support and maintenance for the school's computer lab.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-8 pb-12 border-l-2 border-gray-200 dark:border-gray-700 last:border-0 last:pb-0">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-600"></div>
+                    <div class="mb-2">
+                        <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full text-sm font-medium">
+                            01/2016 - 01/2018
+                        </span>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Technical Officer</h3>
+                        <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-4">Organization not specified</h4>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Provided technical support for software and hardware systems.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Assisted in the development and maintenance of software applications.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Collaborated with stakeholders to gather requirements and deliver solutions that met their needs.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="relative pl-8 pb-12 border-l-2 border-gray-200 dark:border-gray-700 last:border-0 last:pb-0">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-600"></div>
+                    <div class="mb-2">
+                        <span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-300 rounded-full text-sm font-medium">
+                            01/2014 - 01/2015
+                        </span>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Technical Officer</h3>
+                        <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-4">Bluepeak Consult LTD</h4>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Developed and maintained software applications for various clients.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Provided training and support to clients on using software solutions.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                                <span>Assisted in project planning and management to ensure timely delivery of projects.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white relative inline-block text-center mx-auto mb-16">Education & Qualifications
+                <span class="absolute -bottom-2 left-0 w-16 h-1 bg-primary-600 rounded"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Education Card 1 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Master of Science</h3>
+                            <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-2">Computer Science and Technology</h4>
+                            <p class="text-gray-700 dark:text-gray-300 mb-1">Wuhan Textile University - Wuhan Hubei Province, China</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">09/2024</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Card 2 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Bachelor of Science</h3>
+                            <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-2">Computer Science</h4>
+                            <p class="text-gray-700 dark:text-gray-300 mb-1">Saint Monica University Cameroon - Buea</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">04/2017</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Card 3 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">High School Diploma</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-1">Chartered Institute of Information Technology(BCS) - London, United Kingdom</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">04/2015</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Card 4 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">High School Diploma</h3>
+                            <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-2">Information Technology</h4>
+                            <p class="text-gray-700 dark:text-gray-300 mb-1">Kano State Institute of Information Technology - Kano State</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">04/2014</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-8">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-10">Professional Qualifications</h3>
+                
+                <!-- Qualification Card 1 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <h4 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4">BCS Higher Education Qualification (HEQ) - 2015</h4>
+                    <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">BCS HEQ Level 4 (Diploma in IT):</span> Demonstrated advanced understanding of IT systems, databases, networking, and programming, equipping for roles in software development and systems administration.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">BCS HEQ Level 5 (Professional Graduate Diploma in IT):</span> Gained expertise in specialized IT areas such as software engineering, IT project management, and advanced networking, equivalent to the final year of a university degree.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold">BCS HEQ Level 6 (Postgraduate Diploma in IT):</span> Mastered advanced IT strategies, research methodologies, and emerging technologies.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Qualification Card 2 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <h4 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4">Certificate in Networking & Routing Technology - 2016</h4>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            <span class="font-semibold">Huawei Certified Datacom Associate</span> - Earned certification in Networking & Routing Technology from Huawei, showcasing competence in data communication, network design, implementation, and maintenance. This credential validates understanding of routing protocols, switching techniques, and network optimization practices.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Qualification Card 3 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <h4 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4">National Youth Service Certificate - 2019</h4>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-3"></i>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Completed the mandatory National Youth Service Corps (NYSC) program in Nigeria, demonstrating civic responsibility, leadership skills, and active contribution to community development initiatives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Papers Section -->
+    <section id="research" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white relative inline-block text-center mx-auto mb-16">Ongoing Research Papers
+                <span class="absolute -bottom-2 left-0 w-16 h-1 bg-primary-600 rounded"></span>
+            </h2>
+            
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-lg text-gray-700 dark:text-gray-300">
+                    As a Master's student in Computer Science and Technology at Wuhan Textile University, I am actively engaged in research across several domains. Below are my current research projects and areas of interest.
+                </p>
+            </div>
+            
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-10">Research Focus Areas</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Research Area 1 -->
+                    <div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                        <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-primary-600 text-white mb-6">
+                            <i class="fas fa-robot text-3xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Artificial Intelligence & Machine Learning</h4>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Exploring applications of AI/ML in solving real-world problems, particularly in developing regions.
+                        </p>
+                    </div>
+                    
+                    <!-- Research Area 2 -->
+                    <div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                        <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-primary-600 text-white mb-6">
+                            <i class="fas fa-network-wired text-3xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Distributed Systems</h4>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Investigating efficient architectures for distributed computing in resource-constrained environments.
+                        </p>
+                    </div>
+                    
+                    <!-- Research Area 3 -->
+                    <div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-gray-800 dark:to-gray-900 rounded-xl p-8 text-center hover:transform hover:scale-105 transition-all duration-300">
+                        <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-primary-600 text-white mb-6">
+                            <i class="fas fa-shield-alt text-3xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Cybersecurity</h4>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Researching security protocols and frameworks for emerging technologies in developing nations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-10">Current Research Projects</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Research Paper 1 -->
+                    <div class="relative overflow-hidden border-t-4 border-primary-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 p-6">
+                        <span class="absolute top-4 right-4 text-xs font-medium px-2.5 py-1 rounded-full bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300">In Progress</span>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mt-6 mb-4 pr-20">Machine Learning Approaches to Electricity Theft Detection in Developing Countries</h4>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            This research explores novel machine learning algorithms to detect electricity theft patterns in distribution networks, drawing from my experience at Kano Electricity Distribution Company.
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="flex items-center">
+                                <i class="fas fa-calendar-alt mr-2 text-primary-600 dark:text-primary-400"></i>
+                                Expected Completion: December 2025
+                            </span>
+                            <span class="flex items-center">
+                                <i class="fas fa-university mr-2 text-primary-600 dark:text-primary-400"></i>
+                                Wuhan Textile University
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Research Paper 2 -->
+                    <div class="relative overflow-hidden border-t-4 border-amber-500 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 p-6">
+                        <span class="absolute top-4 right-4 text-xs font-medium px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300">Under Review</span>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mt-6 mb-4 pr-20">Blockchain-Based Framework for Secure Educational Credentials in Sub-Saharan Africa</h4>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            A proposed framework utilizing blockchain technology to secure and verify educational credentials, addressing certificate forgery issues in educational institutions across Sub-Saharan Africa.
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="flex items-center">
+                                <i class="fas fa-calendar-alt mr-2 text-primary-600 dark:text-primary-400"></i>
+                                Submitted: March 2025
+                            </span>
+                            <span class="flex items-center">
+                                <i class="fas fa-university mr-2 text-primary-600 dark:text-primary-400"></i>
+                                Wuhan Textile University
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Research Paper 3 -->
+                    <div class="relative overflow-hidden border-t-4 border-gray-500 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-800 p-6">
+                        <span class="absolute top-4 right-4 text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">Planning Phase</span>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mt-6 mb-4 pr-20">Comparative Analysis of Mobile Application Development Frameworks for Resource-Constrained Environments</h4>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6">
+                            This study aims to evaluate and compare various mobile application development frameworks, focusing on their performance and suitability for deployment in regions with limited technological infrastructure.
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
+                            <span class="flex items-center">
+                                <i class="fas fa-calendar-alt mr-2 text-primary-600 dark:text-primary-400"></i>
+                                Starting: January 2024
+                            </span>
+                            <span class="flex items-center">
+                                <i class="fas fa-university mr-2 text-primary-600 dark:text-primary-400"></i>
+                                Wuhan Textile University
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 text-center max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Academic Collaborations</h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                    I am open to collaborations in my research areas. If you're interested in discussing potential research partnerships or have questions about my ongoing work, please reach out through the contact section.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conferences Section -->
+    <section id="conferences" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white relative inline-block text-center mx-auto mb-16">Conferences & Seminars
+                <span class="absolute -bottom-2 left-0 w-16 h-1 bg-primary-600 rounded"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Conference Card 1 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-chalkboard-teacher text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Centre for Information Technology and Development Seminar</h3>
+                            <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-2">EMPOWERING WOMEN FOR ICT BASED SMALL SCALE ENTREPRENEURSHIP</h4>
+                            <p class="text-gray-700 dark:text-gray-300">GGC KANO, 2013</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conference Card 2 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">GDG Kano Devfest 2014</h3>
+                            <p class="text-gray-700 dark:text-gray-300">American corner state library</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conference Card 3 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-palette text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Northwest Google Developer Group</h3>
+                            <h4 class="text-primary-600 dark:text-primary-400 font-medium mb-2">Introduction to Material Design Seminar</h4>
+                            <p class="text-gray-700 dark:text-gray-300">KIIT Kura KANO</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conference Card 4 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-fire text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Firebase and Web Application</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Pioneers ICT Zoo Road KANO by GDG BUK</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conference Card 5 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-mobile-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Android Programming Seminar</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Mambayya House KANO by GDG Minna</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white relative inline-block text-center mx-auto mb-16">Contact Me
+                <span class="absolute -bottom-2 left-0 w-16 h-1 bg-primary-600 rounded"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Location</h3>
+                                <p class="text-gray-700 dark:text-gray-300">No.1 Sunshine Avenue, Jiang Xia District, Wuhan, Hubei, China</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email</h3>
+                                <p class="text-gray-700 dark:text-gray-300">nouramousser@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Phone</h3>
+                                <p class="text-gray-700 dark:text-gray-300">15623963019</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Connect With Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300" aria-label="ResearchGate">
+                                <i class="fab fa-researchgate"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contact-form" class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center">
+                <a href="#home" class="text-2xl font-bold text-primary-400 font-heading mb-6">
+                    Nura Dahiru Musa
+                </a>
+                
+                <p class="text-gray-400 mb-8">Software Engineer & Researcher</p>
+                
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-10">
+                    <a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="text-gray-400 hover:text-white transition-colors duration-300">Experience</a>
+                    <a href="#education" class="text-gray-400 hover:text-white transition-colors duration-300">Education</a>
+                    <a href="#research" class="text-gray-400 hover:text-white transition-colors duration-300">Research</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                </nav>
+                
+                <div class="w-full h-px bg-gray-800 mb-8"></div>
+                
+                <p class="text-gray-500 text-sm text-center">
+                    &copy; 2025 Nura Dahiru Musa. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme toggle functionality
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            
+            // Check for saved theme preference or respect OS preference
+            if (localStorage.getItem('theme') === 'dark' || 
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlElement.classList.add('dark');
+                updateThemeToggleButton(true);
+            } else {
+                htmlElement.classList.remove('dark');
+                updateThemeToggleButton(false);
+            }
+            
+            // Toggle theme when button is clicked
+            themeToggleBtn.addEventListener('click', function() {
+                const isDark = htmlElement.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateThemeToggleButton(isDark);
+            });
+            
+            function updateThemeToggleButton(isDark) {
+                if (isDark) {
+                    themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                    themeToggleBtn.setAttribute('title', 'Switch to light mode');
+                } else {
+                    themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                    themeToggleBtn.setAttribute('title', 'Switch to dark mode');
+                }
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    document.body.classList.toggle('overflow-hidden');
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                    }
+                });
+            }
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                    }
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Form validation
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple validation
+                    let isValid = true;
+                    const formInputs = contactForm.querySelectorAll('input, textarea');
+                    
+                    formInputs.forEach(input => {
+                        if (input.hasAttribute('required') && !input.value.trim()) {
+                            isValid = false;
+                            input.classList.add('border-red-500');
+                        } else {
+                            input.classList.remove('border-red-500');
+                        }
+                        
+                        // Email validation
+                        if (input.type === 'email' && input.value.trim()) {
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!emailRegex.test(input.value.trim())) {
+                                isValid = false;
+                                input.classList.add('border-red-500');
+                            }
+                        }
+                    });
+                    
+                    if (isValid) {
+                        // Show success message (in real app, would send data to server)
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'mt-4 p-3 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-lg';
+                        successMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+                        
+                        // Remove any existing messages
+                        const existingMessage = contactForm.querySelector('.mt-4');
+                        if (existingMessage) {
+                            existingMessage.remove();
+                        }
+                        
+                        contactForm.appendChild(successMessage);
+                        contactForm.reset();
+                        
+                        // Remove message after 5 seconds
+                        setTimeout(() => {
+                            successMessage.remove();
+                        }, 5000);
+                    }
+                });
+            }
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 10) {
+                        navbar.classList.add('bg-white', 'dark:bg-gray-900', 'shadow-md');
+                        navbar.classList.remove('bg-transparent');
+                    } else {
+                        navbar.classList.remove('bg-white', 'dark:bg-gray-900', 'shadow-md');
+                        navbar.classList.add('bg-transparent');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
